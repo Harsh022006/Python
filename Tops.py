@@ -17,7 +17,7 @@ class Tops:
         else:
             print(amount,"Received Money successfully..!")
 
-    def remainingfees(self):
+    def pendingfees(self):
         self.fees=self.fees-amount
         if self.fees==0:
             print("Your Fees is Fullfilled")
@@ -49,15 +49,15 @@ while True:
         t1.installment(amount)
 
     elif choice==3:
-        print("Remaining Fees :")
-        t1.remainingfees()
+        print("Pending Fees :")
+        t1.pendingfees()
 
     elif choice==4:
         print("Thank You For Using Our Service.")
         break
 
-else:
-    print("Invalid choice. Please Choose Between 1 to 4")
+    else:
+        print("Invalid choice. Please Choose Between 1 to 4")
     
         
 
