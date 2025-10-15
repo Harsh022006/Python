@@ -11,12 +11,17 @@ class Tops:
         print("Your Course Fees is : ",fees)
 
     def installment(self,amount):
-        print(amount,"Received Money successfully..!")
+        if self.fees<amount:
+            print("you can't pay over the Fees !, Please check Fees Details.")
+
+        else:
+            print(amount,"Received Money successfully..!")
 
     def remainingfees(self):
         self.fees=self.fees-amount
         if self.fees==0:
             print("Your Fees is Fullfilled")
+
         else:
              print("Your pending fees :",self.fees)
        
@@ -37,7 +42,7 @@ while True:
 
     
     if choice==1:
-        t1.admission("Harsh Amburkar",7096097144,"Python",100000)
+        t1.admission("Harsh Amburkar",7096097144,"Full Stack-Python",100000)
 
     elif choice==2:
         amount=int(input("Enter Your Fees installments : "))
@@ -48,7 +53,7 @@ while True:
         t1.remainingfees()
 
     elif choice==4:
-        print("Thank You For Using Our Service")
+        print("Thank You For Using Our Service.")
         break
 
 else:
