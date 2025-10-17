@@ -1,0 +1,6 @@
+f=open("myfile.txt","w")
+f.write("hii, This is Harsh")
+f.close()
+f=open("myfile.txt", "r")
+print("file content :",f.read())
+f.close()
