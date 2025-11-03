@@ -28,6 +28,33 @@ def insert_data():
         msg.showinfo("Insert status","Data Inserted Successfully") 
         conn.close()
 
+def search_data():
+    e_fname.delete(0,'end')
+    e_lname.delete(0,'end')
+    e_email.delete(0,'end')
+    e_mobile.delete(0,'end')
+    if e_id.get() =="":
+        msg.showinfo("Search Status","ID is Mandatory...!!!")
+    else:
+        conn=create_conn()
+        cursor=conn.cursor()
+        query="select * from student where id=%s"
+        args=(e_id.get(),)
+        cursor.execute(query,args)
+        row=cursor.fetchall()
+        if row:
+            e_fname.insert(0,row[0][1])
+            e_lname.insert(0,row[0][2])
+            e_email.insert(0,row[0][3])
+            e_mobile.insert(0,row[0][4])
+        else:
+            e_fname.delete(0,'end')
+            e_lname.delete(0,'end')
+            e_email.delete(0,'end')
+            e_mobile.delete(0,'end')
+            msg.showinfo("Search Status","Id Not Found...!!")
+            conn.close
+
 
 root=Tk()
 root.geometry("330x370")
